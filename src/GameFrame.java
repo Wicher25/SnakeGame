@@ -1,4 +1,6 @@
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
+
 public class GameFrame extends JFrame
 {
     GameFrame()
@@ -12,4 +14,12 @@ public class GameFrame extends JFrame
         this.setLocationRelativeTo(null);
 
     }
+
+    static final int screen_width = 1300;
+    static final int screen_height = 750;
+
+
+
+
+
 }

@@ -37,6 +37,7 @@ public class GamePanel extends JPanel implements ActionListener
         this.addKeyListener(new MyKeyAdapter());
         startGame();
 
+
     }
 
     public void startGame()
@@ -76,6 +77,7 @@ public class GamePanel extends JPanel implements ActionListener
         else
         {
             GameOver(g);
+
         }
     }
 
@@ -145,6 +147,7 @@ public class GamePanel extends JPanel implements ActionListener
         if(!running)
         {
             timer.stop();
+
         }
 
 
@@ -163,22 +166,17 @@ public class GamePanel extends JPanel implements ActionListener
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Game Over", (screen_width - metrics2.stringWidth("Game Over"))/2, screen_height/2);
 
-        JButton play_again = new JButton();
-        play_again.setBounds((screen_width/2)-100,screen_height-100,200, 100);
-        play_again.addActionListener(e -> restart_game());
-        play_again.setText(("Play again"));
-        play_again.setFocusable(false);
-        play_again.setBackground(Color.black);
-        this.add(play_again);
+            JButton play_again = new JButton();
+            play_again.setBounds((screen_width/2)-100,screen_height-100,200, 100);
+            play_again.addActionListener(e ->new GameFrame());
+            play_again.setText(("Play again"));
+            play_again.setFocusable(false);
+            play_again.setBackground(Color.black);
+            this.add(play_again);
+
 
 
     }
-
-    public void restart_game()
-    {
-        new GameFrame();
-    }
-
     @Override
     public void actionPerformed(ActionEvent e)
     {
